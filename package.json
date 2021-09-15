@@ -29,7 +29,6 @@
         "reflect-metadata": "^0.1.13",
         "sequelize": "^5.21.4",
         "sequelize-typescript": "^0.6.9",
-        "sequelize-typescript@canary": "^1.0.0",
         "sequelize-typescript@next": "^1.0.0"
     },
     "devDependencies": {
