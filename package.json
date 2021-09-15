@@ -7,7 +7,7 @@
         "start": "node .",
         "tsc": "tsc",
         "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
-        "prod": "tsc && node ./www/server.js",
+        "prod": "tsc && node --max-old-space-size=4096 && node ./www/server.js",
         "clean": "rm -rf www/ || true",
         "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,13 +28,15 @@
         "pg": "^8.7.1",
         "reflect-metadata": "^0.1.13",
         "sequelize": "^5.21.4",
-        "sequelize-typescript": "^0.6.9"
+        "sequelize-typescript": "^0.6.9",
+        "sequelize-typescript@canary": "^1.0.0",
+        "sequelize-typescript@next": "^1.0.0"
     },
     "devDependencies": {
         "@types/bluebird": "^3.5.26",
         "@types/cors": "^2.8.6",
         "@types/express": "^4.16.1",
-        "@types/node": "^16",
+        "@types/node": "^14.17.6",
         "@types/sequelize": "^4.27.44",
         "@types/validator": "^10.9.0",
         "@typescript-eslint/eslint-plugin": "^2.19.2",
